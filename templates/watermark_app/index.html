@@ -1,0 +1,26 @@
+{% extends 'watermark_app/base.html' %}
+
+{% block title %}Water-Mark App{% endblock title %}
+
+{% block content %}
+
+<div class="container border border-2 border-success rounded mt-4">
+    <h3 class="m-2">-Water Mark Maker Tool-</h3>
+    <form method="POST" enctype="multipart/form-data" class="p-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="water_mark_title" class="form-label">Your Water-Mark Title</label>
+            <input type="text" name="title" class="form-control" id="water_mark_title" placeholder="Enter Title">
+            <div id="emailHelp" class="form-text">We'll see you title on your uploaded image!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Choose an image for upload</label>
+            <input name="image" class="form-control" type="file" id="formFile">
+        </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock content %}
